@@ -11,11 +11,19 @@
   
 	<div class="container">
 		<div class="header">
-			Top Tracks
+			Top Playlists
 		</div>
- 
+		<div class="back-button"><a>Back to playlists</a></div>
+		<div id="playlist-container"></div>
 		<div id="tracks-container"></div>
 	</div>
+
+	<script id="playlist-template" type="text/x-handlebars-template">
+		{{#each playlists}}
+		<div style="background-image:url({{images.0.url}})" data-playlist-id="{{id}}" data-playlist-name="{{name}}" class="cover">
+		<div class="content-name">{{name}}</div></div>
+		{{/each}}
+	</script>
 
 	<script id="tracks-template" type="text/x-handlebars-template">
 		{{#each tracks}}
@@ -33,6 +41,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js" integrity="sha512-eH6+OZuv+ndnPTxzVfin+li0PXKxbwi1gWWH2xqmljlTfO3JdBlccZkwWd0ZcWAtDTvsqntx1bbVSkWzHUtfQQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./assests/js/home.js"></script>
+    <script src="./assests/js/playlist.js"></script>
 </body>
 </html>
