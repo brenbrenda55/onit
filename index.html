@@ -3,31 +3,65 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>OnIt Music</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assests/css/style.css">
   </head>
   <body>
-  
+   
+	<div id="title-container">
+		<h1 class="title">
+			Onit Streaming <br>
+			For all your music needs 
+		</h1>
+	<section class="section">
 	<div class="container">
-		<div class="header">
-			Top Tracks
-		</div>
+     
+    </div>
+  </section>
  
-		<div id="tracks-container"></div>
-	</div>
+    </div>
+  <section>
+    <div class= "container" id="search">
+      <div id="search-bar">
+        <h3 class="search">Search for an artist!</h3>
+      <input name="artist" id="artist-btn" type="text" autofocus="true" class="form-input" />
+      </div>
+    </div>
+  </section>
 
-	<script id="tracks-template" type="text/x-handlebars-template">
-		{{#each tracks}}
-		<div data-track-id="{{id}}" style="background-image:url(http://direct.rhapsody.com/imageserver/v2/albums/{{albumId}}/images/300x300.jpg)" class="cover">
-		<div class=content-name>{{name}}</div>
-		<audio controls class= "audio">
-			<source src="{{previewURL}}" type="audio/mpeg">
-		</audio>
-		</div>
-		{{/each}}
-	</script>
-	
+  <section>
+    <div class="container" id="music">
+      <div id="music-title"><h3>Music Player</h3></div>
+      <div id="music-container">
+          
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" id="ticket">
+      <div id="ticket-title"><h3>Upcoming Events!</h3></div>
+      <div id="ticket-container">
+        
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" id="playlist">
+      <div id="playlist-title"><h3>Your playlist!</h3></div>
+      <div id="playlist-container">
+        
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    Made with Love by the OnIt Team!
+  </footer>
+  
 	
 	  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

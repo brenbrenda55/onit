@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .header {
   font-size: 50px;
   text-align: center;
@@ -51,3 +52,98 @@
     cursor: pointer;
     text-decoration: underline;
 }
+=======
+html {
+    background-color: #293462;
+}
+
+.title {
+    color: #f3d9d9;
+    text-align: center;
+    padding: 150px;
+    font-size: 150px;
+}
+#title-container {
+    background-image: url("../images/Mu.jpg");
+    background-size: cover;
+    background-position: 80%;
+    height: 800px;
+    width: 100%;
+    object-fit: cover;
+    margin: 0px;
+    
+    
+  
+}
+
+header {
+    color: white;
+    background-color: #1CD6CE;
+    text-align: center;
+    font-size: 100px;
+}
+
+.search {
+    color: #040303;
+    font-size: 25px;
+
+}
+
+#artist-btn {
+    width: 220px;
+    height: 35px;
+}
+
+#search-bar {
+    background-color: #D61C4E;
+    width: 18%;
+    height: 50%;
+    margin: 70px;
+    padding: 10px;
+    position: relative;
+    right: 250px;
+}
+
+#music-title {
+    color: #040303;
+    font-size: 75px;
+    text-align: center;
+    background-color: #554994;
+    width: 45%;
+    border: solid;
+    position: relative;
+    left: 320px;
+    bottom: 170px;
+}
+
+#playlist-title {
+    color: #040303;
+    font-size: 45px;
+    text-align: left;
+    background-color: #F29393;
+    width: 20%;
+    border: solid;
+    position: relative;
+    right: 200px;
+    bottom: 90px;
+}
+
+#ticket-title {
+    color: #040303;
+    font-size: 45px;
+    text-align: right;
+    background-color: #1CD6CE;
+    width: 28%;
+    border: solid;
+    position: relative;
+    left: 1200px;
+}
+
+footer {
+    line-height: 100px;
+    padding: 20px 35px;
+    font-size: 50px;
+    background-color: #091f36;
+    color: #1CD6CE;
+    }
+>>>>>>> main

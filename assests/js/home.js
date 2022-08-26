@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const tracksTemplateSource = document.getElementById('tracks-template').innerHTML;
 const tracksTemplate = Handlebars.compile(tracksTemplateSource);
 
@@ -19,3 +20,5 @@ getTopTracks
 // 		})
 // 	}
 // });
+=======
+>>>>>>> main
