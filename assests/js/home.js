@@ -76,4 +76,4 @@ var displayArtist = function(artistID, searchTerm) {
 
 
 userFormEl.addEventListener("submit", formSubmitHandler);
->>>>>>> 2c895ac212794e09d4053677264ff15d48130432
+
