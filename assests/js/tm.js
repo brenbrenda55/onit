@@ -1,9 +1,9 @@
 
 
 // variables
-var ticketEl = document.querySelector("ticket");
+var ticketEl = document.querySelector("#ticket");
 var apiKey = "i2wFUtDDzSGJ8XJ0kVpmMYl3BcrgWqD3";
-var ticketconEl = document.querySelectorAll("ticket-btn")
+var ticketconEl = document.querySelectorAll("#ticket-title")
 //var tmURL = "https://app.ticketmaster.com/discovery/v2/events/"
 var url = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=i2wFUtDDzSGJ8XJ0kVpmMYl3BcrgWqD3";
 
