@@ -1,14 +1,27 @@
 html {
-    background-color: #293462;
+    background-color: #161414;
 }
 
 .title {
-    color: #f3d9d9;
+    color: #ffffff;
     text-align: center;
     padding: 150px;
-    font-size: 150px;
+    font-size: 100px;
 }
 
+nav {
+    background-color: #161414;
+}
+
+nav ul {
+    
+}
+
+nav ul li {
+    display: inline-block;
+    font-size: 20px;
+  
+}
 .btn {
   font-size: 1.3rem;
   text-decoration:none;
@@ -26,13 +39,10 @@ html {
 }
 
 #title-container {
-    background-image: url("../images/Mu.jpg");
-    background-size: cover;
-    background-position: 80%;
-    height: 800px;
-    width: 100%;
-    object-fit: cover;
-    margin: 0px;
+
+background-color: #150050;
+height: 400px;
+
     
     
   
@@ -67,7 +77,7 @@ header {
     right: 250px;
 }
 
-#music-title {
+#music-container {
     color: #040303;
     font-size: 75px;
     text-align: center;
@@ -79,28 +89,27 @@ header {
     bottom: 170px;
 }
 
+.temporary-testing {
+    font-size: 30px;
+    background-color: #38302e;
+}
+
 #playlist-title {
-    color: #040303;
+   color: #040303;
     font-size: 45px;
     text-align: left;
-    background-color: #F29393;
-    width: 20%;
-    border: solid;
-    position: relative;
-    right: 200px;
-    bottom: 90px;
+    background-color: #F29393; 
+    
 }
 
 #playlist-container {
-    color: #040303;
-    font-size: 45px;
-    text-align: left;
-    background-color: #F29393;
-    width: 20%;
+   
+   
     border: solid;
     position: relative;
-    right: 200px;
+   left: 30px;
     bottom: 90px;
+    width: 14%;
 }
 
 #ticket-title {
@@ -114,6 +123,16 @@ header {
     left: 1200px;
 }
 
+
+.btn{
+    color: #040303;
+    background-color: #D61C4E;
+    border: solid;
+}
+
+.btn:hover {
+    border-color: green;
+}
 footer {
     line-height: 100px;
     padding: 20px 35px;
