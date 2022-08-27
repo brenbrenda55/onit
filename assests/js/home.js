@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-alert ()
 
-// motivation for development
-//user storygit bran
-=======
 // var apiUrl = "https://api.napster.com/v2.1/tracks/top?apikey=NmI1MGU5NWEtNjYwNy00ZmMyLWEzODAtYzJjMGQ1NWNmMDQ4"
 var userFormEl = document.querySelector("#user-form");
 var artistInputEl = document.querySelector("#artist");
