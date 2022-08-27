@@ -1,4 +1,3 @@
-// var apiUrl = "https://api.napster.com/v2.1/tracks/top?apikey=NmI1MGU5NWEtNjYwNy00ZmMyLWEzODAtYzJjMGQ1NWNmMDQ4"
 var userFormEl = document.querySelector("#user-form");
 var artistInputEl = document.querySelector("#artist");
 var artistNameContainerEl = document.querySelector("#artist-name-display");
@@ -27,21 +26,26 @@ var getArtistSongs = function(artist) {
 		// if request is successful
 		if (response.ok) {
 			response.json().then(function(data) {
-				displayArtist(data, artist);
+				displayArtistName(data, artist);
 				// data.search.order will give you Artist Detail which you will use below
 				console.log(data.search.order);
 				
 				var apiArtistSearch = napsterAPI + "artists/" + data.search.order[0] + "?apikey=" + APIKey;
 				console.log(apiArtistSearch);
-				
-				// fetch(apiArtistSearch).then(function(response) {
-// 					//
-// 					if (response.ok) {
-// 						response.jso().then(function(data) {
-// 							console.lot(data);
-// 						})
-// 					}
-// 				});
+				// This fetch will use the artist ID URL to get the artist json data
+				fetch(apiArtistSearch).then(function(response) {
+					// if request is successful then
+					if (response.ok) {
+						response.json().then(function(data) {
+							console.log(data);
+							return;
+						})
+					} else {
+						alert("Error: Artist Not Found");
+					}
+				}).catch(function(error) {
+					alert("Unable to connect to napsterAPI");
+				});
 				
 			});
 		} else {
@@ -49,11 +53,10 @@ var getArtistSongs = function(artist) {
 		}
 	}).catch(function(error) {
 		console.log("Unable to connect with Napster")
-	})
-	
+	})	
 };
 
-var displayArtist = function(artistID, searchTerm) {
+var displayArtistName = function(artistID, artistSearchName) {
 	// check if api returns an artistID
 	if(artistID.length === 0) {
 		artistNameContainerEl.textContent = "No artist found.";
@@ -62,16 +65,12 @@ var displayArtist = function(artistID, searchTerm) {
 		
 	// clear old content
 	//artistNameContainerEl.textContent = "";
-	artistSearchTerm.textContent = "Artist name " + searchTerm;
+	artistSearchTerm.textContent = "Artist name " + artistSearchName;
 
 	// start by displaying artist name
 	var artistNameEl = document.createElement("span");
 	artistNameEl.classList = "align-center "			
-	}
-	
-
-	
-
+}
 
 
 userFormEl.addEventListener("submit", formSubmitHandler);
