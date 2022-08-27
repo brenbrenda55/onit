@@ -25,19 +25,25 @@ var getArtistSongs = function(artist) {
 	fetch(apiSearch).then(function(response) {
 		// if request is successful
 		if (response.ok) {
-			response.json().then(function(data) {
-				displayArtistName(data, artist);
+			response.json().then(function(napsterdata) {
+				displayArtistName(napsterdata, artist);
 				// data.search.order will give you Artist Detail which you will use below
-				console.log(data.search.order);
+				console.log(apiSearch);
+				console.log(napsterdata);
+				console.log(napsterdata.search.data.artists[0].name);
+				console.log(napsterdata.search.order);
 				
-				var apiArtistSearch = napsterAPI + "artists/" + data.search.order[0] + "?apikey=" + APIKey;
+				var apiArtistSearch = napsterAPI + "artists/" + data.search.order[0] + "/tracks?apikey=" + APIKey;
 				console.log(apiArtistSearch);
 				// This fetch will use the artist ID URL to get the artist json data
 				fetch(apiArtistSearch).then(function(response) {
 					// if request is successful then
 					if (response.ok) {
 						response.json().then(function(data) {
-							console.log(data);
+							console.log(data)
+							console.log(data.tracks);
+							console.log(data.tracks[0].id);
+							console.log(data.tracks[0].artistName);
 							return;
 						})
 					} else {
@@ -61,7 +67,8 @@ var displayArtistName = function(artistID, artistSearchName) {
 	if(artistID.length === 0) {
 		artistNameContainerEl.textContent = "No artist found.";
 		return;
-		}
+		};
+
 		
 	// clear old content
 	//artistNameContainerEl.textContent = "";
@@ -69,7 +76,20 @@ var displayArtistName = function(artistID, artistSearchName) {
 
 	// start by displaying artist name
 	var artistNameEl = document.createElement("span");
-	artistNameEl.classList = "align-center "			
+	artistNameEl.classList = "align-center ";		
+}
+
+var displayArtistTracks = function(artistTracksID, artistReturnName) {
+	// check if api returns an artistTracksID
+	if(artistTracksID.length === 0) {
+		console.log("No artist tracks found.");
+		return;
+	}
+	
+	// TODO create a place on the page to display artistTracks
+	
+	
+	
 }
 
 
