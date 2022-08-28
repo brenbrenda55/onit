@@ -70,8 +70,8 @@ var getArtistTrackIDs = function(ArtistID) {
 					for (i = 0; i < data.tracks.length; i++) {
 						console.log(data.tracks[i].id);
 						console.log(data.tracks[i].name);
-						var dataTrackID = data.tracks[0].id;
-						var dataTrackName = data.tracks[0].name;
+						var dataTrackID = data.tracks[i].id;
+						var dataTrackName = data.tracks[i].name;
 						displayArtistTrack(dataTrackID, dataTrackName);
 					};
 					for (i = 0; i < data.tracks.length; i++) {
@@ -120,7 +120,7 @@ var displayArtistTrack = function(trackID, trackName) {
 	// clear previous tracks
 // 	trackContainerEl.textContent = "";
 	// display track name
-	trackNameContainerEl.textContent = "Song Name: " + trackName;
+// 	trackNameContainerEl.textContent = "Song Name: " + trackName;
 	
 	// create a container for each track
 	var trackEl = document.createElement("a");
@@ -128,10 +128,13 @@ var displayArtistTrack = function(trackID, trackName) {
 	trackEl.setAttribute("href", "./assets/html/artist-tracks.html");	
 	// create a span element to hold track name
 	var titleEl = document.createElement("span");
-	titleEl.textContent = trackName;
+	titleEl.textContent = " Song: " + trackName;
 	
 	// append to container
 	trackEl.appendChild(titleEl);
+	
+	// append to container to the DOM
+	trackContainerEl.appendChild(trackEl);
 	
 }
 
