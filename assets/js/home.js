@@ -118,9 +118,9 @@ var displayArtistTrack = function(trackID, trackName) {
 		return;
 	};
 	// clear previous tracks
-// 	trackContainerEl.textContent = "";
+	// trackContainerEl.textContent = "";
 	// display track name
-// 	trackNameContainerEl.textContent = "Song Name: " + trackName;
+	// trackNameContainerEl.textContent = "Song Name: " + trackName;
 	
 	// create a container for each track
 	var trackEl = document.createElement("a");
