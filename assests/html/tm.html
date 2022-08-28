@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-background-danger-light">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,40 +9,24 @@
     <link rel="stylesheet" href="/assests/css/tm.css">
 
 </head>
-<body class="has-background-danger-light">
+<body>
 
 <div class="container-1">
     <h1 class="title" id="tm">
-        Ticket Master 
+        <img src="/assests/images/concert.webp" alt="concert venue">
+        <div class="bottom-left"></div>
+        <div class="top-left"></div>
+        <div class="top-right"></div>
+        <div class="bottom-right"></div>
+        <div class="centered">Ticket Master</div>
+      
     </h1>
-</div>
-
-<!-- event panel listing -->
-<div class="columns">
-    <div class="column is-narrow">
-        <div class="box" style="width: 200px;" id="event-panel">
-            <div class = "panel-heading">
-                <h3 class="panel-title">Events</h3>
-            </div>
-            <div class="panel-body">
-                <div id="events" class="list-grou-item">
-                    <h4 class="title is-5">Event Title</h4>
-                    <p class="title is-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p class="title is-7 venue">venue</p>
-                    <h4 class="title is-5">Event Title</h4>
-                    <p class="title is-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p class="title is-7 venue">venue</p>
-
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 
 <!-- serach events on tm -->
-<div class="container">
-    <div class="field has-addons">
+<div id ="type-list" class="container">
+    <div class="field has-addons is-pulled-right">
         <div class="control">
           <input class="input" id="input-search" type="text" placeholder="Event Search">
         </div>
@@ -55,13 +39,74 @@
    
 </div>
 
-
+<!-- go back -->
 <div>
-    <a href="/index.html" class="btn-back button is-large">
+    <a href="/index.html" class="btn-back button">
         Go Back
     </a>
 </div>
 
+<!-- event panel listing -->
+<div class="columns is-mobile">
+    <div class="column">
+        <div class="box" style="width:200px;" id="event-panel">
+            <div class = "panel-heading">
+                <h3 class="panel-title">Events</h3>
+            </div>
+            <div class="panel-body">
+                <div id="events" class="list-grou-item">
+                    <h4 class="title is-5">Giveon</h4>
+                    <p class="title is-7">August 31,2022. Give Or Take Tour 2022</p>
+                    <p class="title is-7 venue">The Ritz-Raleigh, NC</p>
+                    <h4 class="title is-5">Megan Thee Stallion</h4>
+                    <p class="title is-7">August 24-28, 2022. Leeds Festival 2022.</p>
+                    <p class="title is-7 venue">Bramham Park-Leeds, Great Britian</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="box" style="width:200px;" id="event-panel">
+            <div class = "panel-heading">
+                <h3 class="panel-title">Events</h3>
+            </div>
+            <div class="panel-body">
+                <div id="events" class="list-grou-item">
+                    <h4 class="title is-5">Harry Styles</h4>
+                    <p class="title is-7">August 28, 2022. Harry Styles Love On Tour 2022.</p>
+                    <p class="title is-7 venue">Madison Square Garden - New York,NY</p>
+                    <h4 class="title is-5">Gorgon City</h4>
+                    <p class="title is-7">August 26-28, 2022. Reading Festival 2022.</p>
+                    <p class="title is-7 venue">Reading, Great Britian</p>
+
+                </div>
+            </div>
+    </div>
+    <div class="column">
+        <div class="box" style="width:200px;" id="event-panel">
+            <div class = "panel-heading">
+                <h3 class="panel-title">Events</h3>
+            </div>
+            <div class="panel-body">
+                <div id="events" class="list-grou-item">
+                    <h4 class="title is-5">Giveon</h4>
+                    <p class="title is-7">August 31,2022. Give Or Take Tour 2022</p>
+                    <p class="title is-7 venue">The Ritz-Raleigh, NC</p>
+                    <h4 class="title is-5">Megan Thee Stallion</h4>
+                    <p class="title is-7">August 24-28, 2022. Leeds Festival 2022.</p>
+                    <p class="title is-7 venue">Bramham Park-Leeds, Great Britian</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>
+
+
+<
 
 
 
@@ -88,9 +133,6 @@
     <script src="/index.html"></script>
 </body>
 
-<footer class="has-background-danger-light">
-
-</footer>
 
 
 
