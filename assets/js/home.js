@@ -125,7 +125,7 @@ var displayArtistTrack = function(trackID, trackName) {
 	// create a container for each track
 	var trackEl = document.createElement("a");
 	trackEl.classList = "list-item flex-box justify-space-between align-center";
-	trackEl.setAttribute("href", "./assets/html/artist-tracks.html");	
+	trackEl.setAttribute("href", "./assets/html/play-track.html");	
 	// create a span element to hold track name
 	var titleEl = document.createElement("span");
 	titleEl.textContent = " Song: " + trackName;
