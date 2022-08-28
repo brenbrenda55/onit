@@ -2,7 +2,7 @@
 
 ## Title
 
-Onit- music playlist
+Onit
 
 ## Project Description
 
@@ -14,7 +14,7 @@ Onit- music playlist
 
 ## URL link for live website
 
-placeholder
+https://brenbrenda55.github.io/onit/
 
 ## Screenshot of final product
 

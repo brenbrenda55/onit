@@ -1,0 +1,33 @@
+
+/* background color */
+
+
+/* title */
+#tm {
+    text-align: center;
+    padding: 50px;
+    font-size: 5vw;
+}
+
+/* event panel */
+.columns {
+    padding: 50px;
+    margin: 30px;
+    
+
+
+}
+
+
+/* search bar */
+.container {
+    position: relative;
+    left: 950px;
+    top: -500px;
+    
+}
+
+/* media queries */
+@media  screen {
+    
+}
