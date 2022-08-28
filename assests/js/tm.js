@@ -15,7 +15,7 @@ var formSubmitHandler = function(event) {
 
   //get value from input element
   var eventsearch = inputSearchEl.value.trim();
-
+     console.log(eventsearch);
       if (eventsearch) {
         getSearchesList(eventsTitles)
 
@@ -146,5 +146,5 @@ $.ajax({
 
 
 // upcoming events clicked
-  ticketconEl.addEventListner("click",formSubmitHandler)
+  inputSearchEl.addEventListner("submit",formSubmitHandler)
   
