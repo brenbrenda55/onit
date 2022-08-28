@@ -15,11 +15,17 @@ var formSubmitHandler = function(event) {
   //get value from input element
   var eventsearch = inputSearchEl.value.trim();
 
-      if (eventsearch)
+      if (eventsearch) {
+
+      }
 
 
+};
+
+var placeholer = function() {
+
+  var apiSearch = tmURL + "" +  +
 }
-
 
 
 
