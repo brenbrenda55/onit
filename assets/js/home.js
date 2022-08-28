@@ -139,3 +139,4 @@ var displayArtistTrack = function(trackID, trackName) {
 }
 
 userFormEl.addEventListener("submit", formSubmitHandler);
+
