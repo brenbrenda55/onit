@@ -30,12 +30,13 @@ var getArtistID = function(artist) {
 			console.log(napsterdata);
 			// data.search.order will give you Artist Detail which you will use below
 			console.log(napsterdata.search.data.artists[0].name);
+			artistReturnedName = napsterdata.search.data.artists[0].name;
 			// use this aritistID to get the tracks of the artist
 			var napsterArtistID = napsterdata.search.order[0];
 			getArtistTrackIDs(napsterArtistID);			
 			
 			// display the artist name and track on the page
-			displayArtistName(napsterdata, artist);
+			displayArtistName(napsterdata, artistReturnedName);
 			});
 		} else {
 			console.log("Artist Not Found on Napster")
@@ -73,17 +74,17 @@ var getArtistTrackIDs = function(ArtistID) {
 				
 };
 
-var displayArtistName = function(artistID, artistSearchName) {
+var displayArtistName = function(artistID, artistReturnedName) {
 	// check if api returns an artistID
 	if(artistID.length === 0) {
 		artistNameContainerEl.textContent = "No artist found.";
 		return;
 		};
-
 		
 	// clear old content
-	//artistNameContainerEl.textContent = "";
-	artistSearchTerm.textContent = "Artist name " + artistSearchName;
+	artistNameContainerEl.textContent = "";
+	artistNameContainerEl.textContent = "Artist Name:" + artistReturnedName;
+// 	artistSearchTerm.textContent = "Artist name " + artistSearchName;
 
 	// start by displaying artist name
 	var artistNameEl = document.createElement("span");
