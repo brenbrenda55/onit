@@ -1,6 +1,7 @@
-.header {
+.hero {
   font-size: 50px;
   text-align: center;
+  color: rgb(255, 255, 255);
   
 }
 .track-cover {
@@ -16,7 +17,7 @@
   height: 300px;
   display: inline-block;
   margin: 10px;
-  float: left;
+  
   border: 3px solid black; 
   position: relative;
 }
