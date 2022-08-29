@@ -6,6 +6,8 @@ var napsterAPI = "https://api.napster.com/v2.2/"
 var APIKey = "NmI1MGU5NWEtNjYwNy00ZmMyLWEzODAtYzJjMGQ1NWNmMDQ4";
 var trackNameContainerEl = document.querySelector("#track-name-display"); //temporary for testing
 var trackContainerEl = document.querySelector("#tracks-container");
+var trackURLStored = [];
+
 
 // take the input and pass it to the getArtistID function
 var formSubmitHandler = function(event) {
@@ -68,14 +70,19 @@ var getArtistTrackIDs = function(ArtistID) {
 					console.log(data.tracks.name);
 					// how many tracks are there?
 					for (i = 0; i < data.tracks.length; i++) {
-						console.log(data.tracks[i].id);
-						console.log(data.tracks[i].name);
-						var dataTrackID = data.tracks[i].id;
-						var dataTrackName = data.tracks[i].name;
-						displayArtistTrack(dataTrackID, dataTrackName);
+// 						console.log(data.tracks[i].id);
+// 						console.log(data.tracks[i].name);
+						var trackID = data.tracks[i].id;
+						var trackName = data.tracks[i].name;
+						var trackURL = data.tracks[i].href;
+						var albumID = data.tracks[i].albumId;
+						displayArtistTrack(trackID, trackName, trackURL);
+						trackURLStored.push(trackName,trackURL, albumID);
+						saveTrackUrl();
 					};
 					for (i = 0; i < data.tracks.length; i++) {
 						console.log(data.tracks[i].href);
+
 					};
 					return;
 				})
@@ -111,21 +118,18 @@ var displayNoArtistError = function(artistSearchTerm) {
 	artistNameContainerEl.textContent = "No artist exists with the name: " + artistSearchTerm;
 }
 
-var displayArtistTrack = function(trackID, trackName) {
+var displayArtistTrack = function(trackID, trackName, trackURL) {
 	// check if api returns an artistTracksID
 	if(trackID.length === 0) {
 		console.log("No artist tracks found.");
 		return;
 	};
-	// clear previous tracks
-	// trackContainerEl.textContent = "";
-	// display track name
-	// trackNameContainerEl.textContent = "Song Name: " + trackName;
 	
 	// create a container for each track
 	var trackEl = document.createElement("a");
 	trackEl.classList = "list-item flex-box justify-space-between align-center";
-	trackEl.setAttribute("href", "./assets/html/play-track.html");	
+	trackEl.setAttribute("href", "./assets/html/play-track.html");
+	trackEl.setAttribute("data", trackURL);
 	// create a span element to hold track name
 	var titleEl = document.createElement("span");
 	titleEl.textContent = " Song: " + trackName;
@@ -137,6 +141,11 @@ var displayArtistTrack = function(trackID, trackName) {
 	trackContainerEl.appendChild(trackEl);
 	
 }
+
+var saveTrackUrl = function() {
+	localStorage.setItem("trackURL", JSON.stringify(trackURLStored));
+};
+
 
 userFormEl.addEventListener("submit", formSubmitHandler);
 

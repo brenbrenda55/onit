@@ -10,7 +10,7 @@ const $mainTitle = $('.header');
 const $backButton = $('.back-button');
 
 const getTopPlaylists = $.get('https://api.napster.com/v2.0/playlists?apikey=NmI1MGU5NWEtNjYwNy00ZmMyLWEzODAtYzJjMGQ1NWNmMDQ4');
-
+console.log(getTopPlaylists);
 function getPlaylistTracks(id) {
   return $.get('https://api.napster.com/v2.0/playlists/' + id + '/tracks?apikey=NmI1MGU5NWEtNjYwNy00ZmMyLWEzODAtYzJjMGQ1NWNmMDQ4&limit=200');
 }
