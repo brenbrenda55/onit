@@ -2,23 +2,26 @@
 
 // variables
 var ticketEl = document.querySelector("#ticket");
-var inputSearchEl = document.querySelector("#input-search")
+var inputSearchEl = document.querySelector("#input-search");
 var apiKey = "i2wFUtDDzSGJ8XJ0kVpmMYl3BcrgWqD3";
-var tmURL ="https://app.ticketmaster.com/discovery/v2/events.json?"
-var ticketconEl = document.querySelectorAll("#ticket-title")
+var tmURL ="https://app.ticketmaster.com/discovery/v2/events.json?";
+var ticketEl = document.querySelector("#ticket-form");
 //var tmURL = "https://app.ticketmaster.com/discovery/v2/events/"
 //var url = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=i2wFUtDDzSGJ8XJ0kVpmMYl3BcrgWqD3";
 
 var formSubmitHandler = function(event) {
   event.preventDefault();
-
+      console.log(event)
   //get value from input element
   var eventsearch = inputSearchEl.value.trim();
 
       if (eventsearch) {
-
+        placeholer(eventsearch);
+       
       }
-
+      else {
+        alert("not a event");
+      }
 
 };
 
@@ -26,7 +29,8 @@ var placeholer = function() {
 
   var apiSearch = tmURL + keyword + "&" +  apiKey;
 
-  fetch(apiSearch).then(function(response) {
+  fetch(apiSearch)
+  .then(function(response) {
 
     if (response.ok){
       response.json().then(function(tmdata) {
@@ -44,7 +48,7 @@ var placeholer = function() {
   })
 };
 
-
+ticketEl.addEventListner("click", formSubmitHandler);
 
 
 
@@ -109,4 +113,3 @@ var placeholer = function() {
   // });
 
 // upcoming events clicked
-  ticketconEl.addEventListner("click", formSubmitHandler);

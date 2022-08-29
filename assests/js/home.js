@@ -1,4 +1,3 @@
-
 // var apiUrl = "https://api.napster.com/v2.1/tracks/top?apikey=NmI1MGU5NWEtNjYwNy00ZmMyLWEzODAtYzJjMGQ1NWNmMDQ4"
 var userFormEl = document.querySelector("#user-form");
 var artistInputEl = document.querySelector("#artist");
@@ -15,6 +14,7 @@ var formSubmitHandler = function(event) {
 	
 	if (artistname) {
 			getArtistSongs(artistname);
+			localStorage.setItem("Recent", JSON.stringify(artistname));
 		return;
 	}
 };
@@ -67,7 +67,8 @@ var displayArtist = function(artistID, searchTerm) {
 
 	// start by displaying artist name
 	var artistNameEl = document.createElement("span");
-	artistNameEl.classList = "align-center "			
+	artistNameEl.classList = "align-center "
+			
 	}
 	
 
@@ -76,4 +77,3 @@ var displayArtist = function(artistID, searchTerm) {
 
 
 userFormEl.addEventListener("submit", formSubmitHandler);
-
