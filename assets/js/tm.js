@@ -4,8 +4,14 @@
 var ticketEl = document.querySelector("#ticket");
 var inputSearchEl = document.querySelector("#input-search");
 var apiKey = "i2wFUtDDzSGJ8XJ0kVpmMYl3BcrgWqD3";
+<<<<<<< HEAD:assests/js/tm.js
 var tmURL ="https://app.ticketmaster.com/discovery/v2/events.json?";
 var ticketEl = document.querySelector("#ticket-form");
+=======
+var tmURL ="https://app.ticketmaster.com/discovery/v2/events.json?"
+var ticketconEl = document.querySelector("#ticket-title")
+var typeListEl = document.querySelector("#type-list")
+>>>>>>> cc0760cc9e16f716e2eabf6e9fb5aca70651f807:assets/js/tm.js
 //var tmURL = "https://app.ticketmaster.com/discovery/v2/events/"
 //var url = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=i2wFUtDDzSGJ8XJ0kVpmMYl3BcrgWqD3";
 
@@ -14,8 +20,9 @@ var formSubmitHandler = function(event) {
       console.log(event)
   //get value from input element
   var eventsearch = inputSearchEl.value.trim();
-
+     console.log(eventsearch);
       if (eventsearch) {
+<<<<<<< HEAD:assests/js/tm.js
         placeholer(eventsearch);
        
       }
@@ -23,9 +30,14 @@ var formSubmitHandler = function(event) {
         alert("not a event");
       }
 
+=======
+        getSearchesList(eventsTitles)
+
+      }
+>>>>>>> cc0760cc9e16f716e2eabf6e9fb5aca70651f807:assets/js/tm.js
 };
 
-var placeholer = function() {
+var getSearchesList = function(keyword) {
 
   var apiSearch = tmURL + keyword + "&" +  apiKey;
 
@@ -49,6 +61,57 @@ var placeholer = function() {
 };
 
 ticketEl.addEventListner("click", formSubmitHandler);
+
+//attractions from tm
+$.ajax({
+  type:"GET",
+  url:"https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=i2wFUtDDzSGJ8XJ0kVpmMYl3BcrgWqD3",
+  async:true,
+  dataType: "json",
+  success: function(json) {
+              console.log(json);
+              // Parse the response.
+              // Do other things.
+           },
+  error: function(xhr, status, err) {
+              // This time, we do not end up here!
+           }
+});
+
+
+//event seach from tm
+$.ajax({
+  type:"GET",
+  url:"https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=i2wFUtDDzSGJ8XJ0kVpmMYl3BcrgWqD3",
+  async:true,
+  dataType: "json",
+  success: function(json) {
+              console.log(json);
+              // Parse the response.
+              // Do other things.
+           },
+  error: function(xhr, status, err) {
+              // This time, we do not end up here!
+           }
+});
+
+
+// images from tm
+$.ajax({
+  type:"GET",
+  url:"https://app.ticketmaster.com/discovery/v2/events/k7vGFKzleBdwS/images.json?apikey=i2wFUtDDzSGJ8XJ0kVpmMYl3BcrgWqD3",
+  async:true,
+  dataType: "json",
+  success: function(json) {
+              console.log(json);
+              // Parse the response.
+              // Do other things.
+           },
+  error: function(xhr, status, err) {
+              // This time, we do not end up here!
+           }
+});
+
 
 
 
@@ -97,19 +160,10 @@ ticketEl.addEventListner("click", formSubmitHandler);
 
 // event search on ticket master 
 
-// $.ajax({
-    // type:"GET",
-    // url:"https://app.ticketmaster.com/discovery/v2/events.json?apikey=i2wFUtDDzSGJ8XJ0kVpmMYl3BcrgWqD3",
-    // async:true,
-    // dataType: "json",
-    // success: function(json) {
-                // console.log(json);
-                // Parse the response.
-                // Do other things.
-            //  },
-    // error: function(xhr, status, err) {
-                // This time, we do not end up here!
-            //  }
-  // });
 
 // upcoming events clicked
+<<<<<<< HEAD:assests/js/tm.js
+=======
+  inputSearchEl.addEventListner("submit",formSubmitHandler)
+  
+>>>>>>> cc0760cc9e16f716e2eabf6e9fb5aca70651f807:assets/js/tm.js

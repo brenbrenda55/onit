@@ -89,8 +89,13 @@ header {
     bottom: 170px;
 }
 
-.temporary-testing {
+.display-artist {
     font-size: 30px;
+    background-color: #38302e;
+}
+
+.tracks-group {
+    font-size: 20px; 
     background-color: #38302e;
 }
 
