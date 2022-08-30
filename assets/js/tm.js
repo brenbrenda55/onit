@@ -37,7 +37,7 @@ var geteventsID  = function(eventStuff){
 //tm object
       console.log(event)
   //get value from input element
-  var eventsearch = inputSearchEl.value.trim();
+  var eventsearch = inputSearchEl.value.trim()
      console.log(eventsearch);
       if (eventsearch) {
         placeholer(eventsearch);
@@ -45,9 +45,8 @@ var geteventsID  = function(eventStuff){
       else {
         alert("not a event");
       }
-        getSearchesList(eventsTitles)
-    }
-};
+        getSearchesList(eventsTitles) 
+    
 
 var getSearchesList = function(keyword) {
 
@@ -99,7 +98,7 @@ var displayTMresults = function(results){
 
 for (var i = 0; i < displayConEl.length; i++) {
   //create a link element to take users to the results from tm
-  var displayEl.classList  = "list-item flex-row justify-space-between align-center";
+ // var displayEl.classList  = "list-item flex-row justify-space-between align-center";
   displayEl.setAttribute("href", results[i].html_url);
   displayEl.setAttribute("target", "_blank");
   
