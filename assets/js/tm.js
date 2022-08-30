@@ -4,14 +4,14 @@
 var ticketEl = document.querySelector("#ticket");
 var inputSearchEl = document.querySelector("#input-search");
 var apiKey = "i2wFUtDDzSGJ8XJ0kVpmMYl3BcrgWqD3";
-<<<<<<< HEAD:assests/js/tm.js
+
 var tmURL ="https://app.ticketmaster.com/discovery/v2/events.json?";
 var ticketEl = document.querySelector("#ticket-form");
-=======
+
 var tmURL ="https://app.ticketmaster.com/discovery/v2/events.json?"
 var ticketconEl = document.querySelector("#ticket-title")
 var typeListEl = document.querySelector("#type-list")
->>>>>>> cc0760cc9e16f716e2eabf6e9fb5aca70651f807:assets/js/tm.js
+
 //var tmURL = "https://app.ticketmaster.com/discovery/v2/events/"
 //var url = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=i2wFUtDDzSGJ8XJ0kVpmMYl3BcrgWqD3";
 
@@ -22,7 +22,7 @@ var formSubmitHandler = function(event) {
   var eventsearch = inputSearchEl.value.trim();
      console.log(eventsearch);
       if (eventsearch) {
-<<<<<<< HEAD:assests/js/tm.js
+s
         placeholer(eventsearch);
        
       }
@@ -30,12 +30,12 @@ var formSubmitHandler = function(event) {
         alert("not a event");
       }
 
-=======
+
         getSearchesList(eventsTitles)
 
       }
->>>>>>> cc0760cc9e16f716e2eabf6e9fb5aca70651f807:assets/js/tm.js
-};
+
+
 
 var getSearchesList = function(keyword) {
 
@@ -162,8 +162,7 @@ $.ajax({
 
 
 // upcoming events clicked
-<<<<<<< HEAD:assests/js/tm.js
-=======
+
   inputSearchEl.addEventListner("submit",formSubmitHandler)
   
->>>>>>> cc0760cc9e16f716e2eabf6e9fb5aca70651f807:assets/js/tm.js
+
