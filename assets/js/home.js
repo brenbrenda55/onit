@@ -80,7 +80,7 @@ var getArtistTrackIDs = function(ArtistID) {
 						var albumID = data.tracks[i].albumId;
 						var previewURL = data.tracks[i].previewURL;
 						displayArtistTrack(trackID, trackName, trackURL);
-						trackURLStored.push(trackName,trackURL, albumID);
+						trackURLStored.push(trackName, trackURL, albumID, previewURL);
 						saveTrackUrl();
 						console.log(previewURL);
 					};
