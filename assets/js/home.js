@@ -66,7 +66,9 @@ var getArtistTrackIDs = function(ArtistID) {
 			if (response.ok) {
 				response.json().then(function(data) {
 					// there is a lot of data available for each track
+
 					console.log(data.tracks);
+					console.log(data.tracks.previewURL);
 					console.log(data.tracks.name);
 					// how many tracks are there?
 					for (i = 0; i < data.tracks.length; i++) {
@@ -76,9 +78,11 @@ var getArtistTrackIDs = function(ArtistID) {
 						var trackName = data.tracks[i].name;
 						var trackURL = data.tracks[i].href;
 						var albumID = data.tracks[i].albumId;
+						var previewURL = data.tracks[i].previewURL;
 						displayArtistTrack(trackID, trackName, trackURL);
 						trackURLStored.push(trackName,trackURL, albumID);
 						saveTrackUrl();
+						console.log(previewURL);
 					};
 					for (i = 0; i < data.tracks.length; i++) {
 						console.log(data.tracks[i].href);

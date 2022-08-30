@@ -8,38 +8,23 @@ var getTrackInfo = function(tracksArray) {
 	// console.log(trackURLArray);
 	// extract just albumID for each song saved in localStorage
 	trackAlbumIDArray = [];
+	trackNameArray = [];
 	console.log(trackAlbumIDArray);
 	for (i = 0; i < tracksArray.length/3; i++) {
 		trackAlbumIDArray.push(tracksArray[(i*3) + 2]);
+		trackNameArray.push(tracksArray[i*3]);
 	};
+	console.log(trackNameArray);
 	console.log(trackAlbumIDArray);
-	trackAlbumIDUrl = [];
+	trackImageUrl = [];
 	// format the Napster api url for the track
 	for (i=0; i < trackAlbumIDArray.length; i++){
-		trackAlbumIDUrl.push(napsterImageServer + trackAlbumIDArray[i] + 
+		trackImageUrl.push(napsterImageServer + trackAlbumIDArray[i] + 
 		"/images/300x300.jpg?apikey=" + APIKey);
-// 		console.log(trackAlbumIDUrl);
 	};
-	
-	console.log(trackAlbumIDUrl);
-	console.log(trackAlbumIDUrl.length);
-	
-	// go get the images from napsterImageServer . this works but some errors
-	
-	// for(i = 0; i < trackAlbumIDUrl.length; i++) {
-// 		fetch(trackAlbumIDUrl[i]).then(function(response) {
-// 			if (response.ok) {
-// 				response.json().then(function(imageURL) {
-// 					console.log(imageURL);
-// // 					getTrackImage(trackAlbumID);
-// 				});
-// 			} else {
-// 				console.log("Error nothing found");
-// 			}
-// 		}).catch(function(error) {
-// 			console.log("Unable to connect to Napster api");
-// 		});
-// 	};
+	console.log(trackImageUrl);
+	console.log(trackImageUrl.length);
+	displayAlbumImage(trackImageUrl, trackNameArray);
 };
 
 var displayAlbumImage = function(imageURL, trackName) {
@@ -47,10 +32,11 @@ var displayAlbumImage = function(imageURL, trackName) {
 		tracksContainerEl.textConent = "No Songs Found";
 		return;
 	}
-	tracksContainerEl.textConent = "";	
+// 	var trackEl = document.createElement("img");
+// 	trackEl.setAttribute("src", imageURL[0]);
 	
-	
-}
+// 	var titleEl = document.
+};
 
 var loadTaskURL = function() {
 	var savedTrackURLArray = localStorage.getItem("trackURL");
