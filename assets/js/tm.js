@@ -5,7 +5,6 @@ var searchEl = document.querySelector("#input-search");
 var eventEl = document.querySelector("#event");
 var displayConEl = document.querySelector("#display-container")
 
-
 //take the input and pass it to the event seasrch
 var formSubmitHandler = function(event) {
   event.preventDefault();
@@ -36,6 +35,46 @@ var geteventsID  = function(eventStuff){
 };
 
 //tm object
+      console.log(event)
+  //get value from input element
+  var eventsearch = inputSearchEl.value.trim();
+     console.log(eventsearch);
+      if (eventsearch) {
+        placeholer(eventsearch);
+      }
+      else {
+        alert("not a event");
+      }
+        getSearchesList(eventsTitles)
+    }
+};
+
+var getSearchesList = function(keyword) {
+
+  var apiSearch = tmURL + keyword + "&" +  apiKey;
+
+  fetch(apiSearch)
+  .then(function(response) {
+
+    if (response.ok){
+      response.json().then(function(tmdata) {
+        console.log(tmdata);
+
+        displaySearches(tmdata);
+      });
+    } else {
+        console.log("search not found")
+    }
+
+  }).catch(function(error) {
+    console.log("unable to connect with tm")
+
+  })
+};
+
+ticketEl.addEventListner("click", formSubmitHandler);
+
+//attractions from tm
 $.ajax({
   type:"GET",
   url:"https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=i2wFUtDDzSGJ8XJ0kVpmMYl3BcrgWqD3",
