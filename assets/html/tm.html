@@ -50,12 +50,12 @@
 <div id ="type-list" class="container">
     <div class="field has-addons is-pulled-right">
         <div class="control">
-           <form id="input-search">
+           <form>
           <input class="input" id="event" type="text" placeholder="Event Search">
            </form>
         </div>
         <div class="control">
-          <a class="button is-info">
+          <a class="button is-info" id="input-search">
             Search
           </a>
         </div>
@@ -75,9 +75,8 @@
     <div class="container has-text-centered">
         <h2 class="results-title is-size-1">Results</h2>
         <h3 class="display-results"><span id="display"></span> </h3>
-        <div class="list-group" id="display-container">
-            
-        </div>
+        <ul class="list-group" id="display-container"></ul>
+    
     </div>
 </section>
 
