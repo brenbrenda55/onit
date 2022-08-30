@@ -146,5 +146,5 @@ $.ajax({
 
 
 // upcoming events clicked
-  inputSearchEl.addEventListner("submit",formSubmitHandler)
+  inputSearchEl.addEventListener("submit",formSubmitHandler)
   
