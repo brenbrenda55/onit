@@ -32,7 +32,7 @@ var getArtistID = function(artist) {
 		if (response.ok) {
 			response.json().then(function(napsterdata) {
 			// here is the whole object if you are interested
-			console.log(napsterdata);
+			// console.log(napsterdata);
 			// check if there exists something on Napster
 			if(napsterdata.meta.totalCount === 0) {
 				console.log("No artist exists with " + artist + " name.");
@@ -40,7 +40,7 @@ var getArtistID = function(artist) {
 				return;
 			};
 			// data.search.order will give you Artist Detail which you will use below
-			console.log(napsterdata.search.data.artists[0].name);
+			// console.log(napsterdata.search.data.artists[0].name);
 			artistReturnedName = napsterdata.search.data.artists[0].name;
 			// use this aritistID to get the tracks of the artist
 			var napsterArtistID = napsterdata.search.order[0];
@@ -58,7 +58,7 @@ var getArtistID = function(artist) {
 
 // Napster api fetch artist tracks, trackIDs, and use displayArtistTrack function 
 var getArtistTrackIDs = function(ArtistID) {
-	console.log(ArtistID); 
+	// console.log(ArtistID); 
 	var apiArtistTracksUrl = napsterAPI + "artists/" + ArtistID + "/tracks?apikey=" + APIKey;
 		// This fetch will use the artist ID URL to get the artist json data
 		fetch(apiArtistTracksUrl).then(function(response) {
@@ -68,8 +68,8 @@ var getArtistTrackIDs = function(ArtistID) {
 					// there is a lot of data available for each track
 
 					console.log(data.tracks);
-					console.log(data.tracks.previewURL);
-					console.log(data.tracks.name);
+// 					console.log(data.tracks.previewURL);
+// 					console.log(data.tracks.name);
 					// how many tracks are there?
 					for (i = 0; i < data.tracks.length; i++) {
 // 						console.log(data.tracks[i].id);
@@ -79,6 +79,9 @@ var getArtistTrackIDs = function(ArtistID) {
 						var trackURL = data.tracks[i].href;
 						var albumID = data.tracks[i].albumId;
 						var previewURL = data.tracks[i].previewURL;
+						
+						console.log(albumID);
+						
 						displayArtistTrack(trackID, trackName, trackURL);
 						trackURLStored.push(trackName, trackURL, albumID, previewURL);
 						saveTrackUrl();

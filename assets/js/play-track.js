@@ -19,10 +19,10 @@ var getTrackInfo = function(tracksArray) {
 		trackMP3PreviewArray.push(tracksArray[(i*4) + 3])
 		
 	};
-	console.log(trackNameArray);
-	console.log(trackURLArray);
-	console.log(trackAlbumIDArray);
-	console.log(trackMP3PreviewArray);
+// 	console.log(trackNameArray);
+// 	console.log(trackURLArray);
+// 	console.log(trackAlbumIDArray);
+// 	console.log(trackMP3PreviewArray);
 	
 	trackImageURLArray = [];
 	// format the Napster api url for the track
@@ -30,7 +30,8 @@ var getTrackInfo = function(tracksArray) {
 		trackImageURLArray.push(napsterImageServer + trackAlbumIDArray[i] + 
 		"/images/300x300.jpg?apikey=" + APIKey);
 	};
-	console.log(trackImageURLArray);
+	console.log(trackAlbumIDArray);
+
 	displayAlbumImage(trackImageURLArray, trackNameArray, trackMP3PreviewArray);
 };
 
@@ -39,17 +40,32 @@ var displayAlbumImage = function(imageURL, trackName, trackMP3) {
 		tracksContainerEl.textConent = "No Songs Found";
 		return;
 	}
+	
+	for (i = 0; i < trackNameArray.length; i++) {
+		
+		var singleTrackContainerEl = document.createElement("figure");
+		singleTrackContainerEl.setAttribute("class", "single-track");
+		singleTrackContainerEl.setAttribute("id", "track#", i);
 
-	var trackEl = document.createElement("img");
-	trackEl.setAttribute("src", imageURL[0]);
+		var trackTitleEl = document.createElement("figcaption");
+		trackTitleEl.textContent = "Listen to " + trackName[i] + ":";
+		singleTrackContainerEl.appendChild(trackTitleEl);
+		
+		var trackAudioEl = document.createElement("audio")
+		trackAudioEl.setAttribute("controls", "");
+		trackAudioEl.setAttribute("src", trackMP3[i]);
+		trackTitleEl.appendChild(trackAudioEl);
+		singleTrackContainerEl.appendChild(trackTitleEl);
 	
-	var titleEl = document.createElement("span");
-	titleEl.textConent = trackName[0];
-	
-	trackEl.appendChild(titleEl);
-	
-	tracksContainerEl.appendChild(trackEl);
-	
+		tracksContainerEl.appendChild(singleTrackContainerEl);
+		
+		var trackImageEl = document.createElement("img");
+		trackImageEl.setAttribute("src", imageURL[i]);
+		
+		singleTrackContainerEl.appendChild(trackImageEl);
+
+		console.log(trackImageEl);
+	}
 };
 
 var loadTaskURL = function() {
