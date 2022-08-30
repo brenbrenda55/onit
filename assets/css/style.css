@@ -187,3 +187,88 @@ header nav ul li a:hover {
     background: #38fc9a;
     text-shadow: none;
 }
+
+
+@media screen and (max-width: 980px) {
+    #search-bar {
+        position: relative;
+        left: 150px;
+        bottom: 50px;
+        width: 35%;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .search {
+        font-size: 15px;
+    }
+
+    .btn {
+        font-size: 15px;
+    }
+
+    #music-container {
+        position: relative;
+        bottom: 100px;
+        left: 175px;
+    }
+
+    #recent-container {
+        position: relative;
+        right: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    #search-bar {
+        position: static;
+        width: 30%;
+        font-size: 15px;
+    }
+
+    .search {
+        font-size: 15px;
+    }
+
+    .btn {
+        font-size: 15px;
+    }
+
+    #music-container {
+        position: relative;
+        top: -50px;
+        left: 100px;
+    }
+   
+}
+
+
+@media screen and (max-width:575px) {
+    #search-bar {
+        position: static;
+        width: 75%;
+        font-size: 15px;
+    }
+
+    .search {
+        font-size: 15px;
+    }
+
+    .btn {
+        font-size: 15px;
+    }
+
+    #music-container {
+        position: relative;
+        top: -50px;
+        left: 120px;
+    }
+    #recent-container {
+        position: relative;
+       left: 15px;
+    }
+
+    
+}
+
