@@ -48,6 +48,7 @@ var displayAlbumImage = function(imageURL, trackName, trackMP3) {
 	
 	trackEl.appendChild(titleEl);
 	
+	tracksContainerEl.appendChild(trackEl);
 	
 };
 
