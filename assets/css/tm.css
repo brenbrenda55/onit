@@ -1,6 +1,42 @@
 
 /* background color */
 
+#onit-header {
+  font-size: 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #ffffff;
+}
+
+header nav {
+  background-color: #161414;
+ 
+  
+}
+
+header nav ul {
+  text-align: center;
+ 
+
+  align-items: center;
+
+  list-style: none;
+  
+}
+
+header nav ul li {
+  display: inline-block;
+  font-size: 20px;
+
+}
+
+header nav ul li a {
+
+  padding: 10px 15px;
+  font-weight: lighter;
+  font-size: 1.55vw;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+ 
+}
 
 /* title */
 #tm {
