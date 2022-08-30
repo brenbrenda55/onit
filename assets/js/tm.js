@@ -1,25 +1,9 @@
 // variables
-<<<<<<< HEAD
-var ticketEl = document.querySelector("#ticket");
-var inputSearchEl = document.querySelector("#input-search");
-var apiKey = "i2wFUtDDzSGJ8XJ0kVpmMYl3BcrgWqD3";
-
-var tmURL ="https://app.ticketmaster.com/discovery/v2/events.json?";
-var ticketEl = document.querySelector("#ticket-form");
-
-var tmURL ="https://app.ticketmaster.com/discovery/v2/events.json?"
-var ticketconEl = document.querySelector("#ticket-title")
-var typeListEl = document.querySelector("#type-list")
-
-//var tmURL = "https://app.ticketmaster.com/discovery/v2/events/"
-//var url = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=i2wFUtDDzSGJ8XJ0kVpmMYl3BcrgWqD3";
-=======
 var myKey = "i2wFUtDDzSGJ8XJ0kVpmMYl3BcrgWqD3"
 var tmURL = "https://app.ticketmaster.com/discovery/v2/attractions"
 var searchEl = document.querySelector("#input-search");
 var eventEl = document.querySelector("#event");
 var displayConEl = document.querySelector("#display-container")
->>>>>>> main
 
 //take the input and pass it to the event seasrch
 var formSubmitHandler = function(event) {
@@ -56,28 +40,14 @@ var geteventsID  = function(eventStuff){
   var eventsearch = inputSearchEl.value.trim();
      console.log(eventsearch);
       if (eventsearch) {
-<<<<<<< HEAD
-s
-=======
->>>>>>> main
         placeholer(eventsearch);
       }
       else {
         alert("not a event");
       }
-<<<<<<< HEAD
-
-
-        getSearchesList(eventsTitles)
-
-      }
-
-
-=======
         getSearchesList(eventsTitles)
     }
 };
->>>>>>> main
 
 var getSearchesList = function(keyword) {
 
@@ -161,12 +131,4 @@ displayConEl.appendChild(typeEl);
 
 
 
-<<<<<<< HEAD
-// upcoming events clicked
-
-  inputSearchEl.addEventListner("submit",formSubmitHandler)
-  
-=======
 searchEl.addEventListener("submit", formSubmitHandler)
->>>>>>> main
-
