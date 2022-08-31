@@ -45,6 +45,12 @@ header nav ul li a {
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
    
 }
+
+.single-track {
+	max-width: 350px !important;
+
+}
+
 .btn {
   font-size: 1.3rem;
   text-decoration:none;
