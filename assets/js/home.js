@@ -6,7 +6,10 @@ var napsterAPI = "https://api.napster.com/v2.2/"
 var APIKey = "NmI1MGU5NWEtNjYwNy00ZmMyLWEzODAtYzJjMGQ1NWNmMDQ4";
 var trackNameContainerEl = document.querySelector("#track-name-display"); //temporary for testing
 var trackContainerEl = document.querySelector("#tracks-container");
+var recent = document.querySelector("#ra");
 var trackURLStored = [];
+
+
 
 
 // take the input and pass it to the getArtistID function
@@ -17,6 +20,7 @@ var formSubmitHandler = function(event) {
 	// now use pass this input into the getArtistID function below
 	if (artistname) {
 			getArtistID(artistname);
+			saveRecentArtist(artistname);
 		return;
 	}
 };
@@ -154,5 +158,27 @@ var saveTrackUrl = function() {
 };
 
 
+
 userFormEl.addEventListener("submit", formSubmitHandler);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var saveRecentArtist = function(artistname){
+	var getArtist = [];
+	localStorage.setItem("artist", JSON.stringify(artistname));
+	getArtist = JSON.parse(localStorage.getItem("artist"));
+	document.getElementById('ra').innerHTML = getArtist;
+}

@@ -132,4 +132,3 @@ displayConEl.appendChild(typeEl);
 
 
 searchEl.addEventListener("submit", formSubmitHandler)
-
