@@ -95,6 +95,12 @@ header nav ul li a {
   transform: translate(-50%, -50%);
 }
 
+.comlumn {
+    display: flex;
+    
+
+}
+
 
 header nav ul li a {
   color: #d61c9e;
