@@ -5,7 +5,7 @@ html {
 .title {
     color: #ffffff;
     text-align: center;
-    padding: 150px;
+    padding: 150px 0px;
     font-size: 100px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
