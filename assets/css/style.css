@@ -188,6 +188,10 @@ header nav ul li a:hover {
     text-shadow: none;
 }
 
+#playlist-container {
+    width: 1000px; height: 200px; position: relative; left: 250px; top: 100px;
+  }
+
 
 
 @media screen and (max-width: 1700px) {
@@ -298,7 +302,10 @@ header nav ul li a:hover {
         position: relative;
        left: 15px;
     }
-
+    #playlist-container {
+        position: static;
+        width: 25%;
+    }
     
 }
 
