@@ -9,9 +9,6 @@ var trackContainerEl = document.querySelector("#tracks-container");
 var recent = document.querySelector("#ra");
 var trackURLStored = [];
 
-
-
-
 // take the input and pass it to the getArtistID function
 var formSubmitHandler = function(event) {
 	event.preventDefault();	
@@ -156,8 +153,6 @@ var displayArtistTrack = function(trackID, trackName, trackURL) {
 var saveTrackUrl = function() {
 	localStorage.setItem("trackURL", JSON.stringify(trackURLStored));
 };
-
-
 
 userFormEl.addEventListener("submit", formSubmitHandler);
 
