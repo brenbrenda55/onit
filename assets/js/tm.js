@@ -80,7 +80,7 @@ var formSubmitHandler = function (event) {
   event.preventDefault();
   // get value from input element and format
   var eventname = eventEl.value.trim();
-  console.log(eventname)
+  console.log(eventname);
   //now use pass this input into the results function below
   if (eventname) {
     // geteventsID(eventname);
@@ -108,33 +108,35 @@ $.ajax({
 });
 
 var displayTMresults = function (results) {
-  console.log(results)
+  console.log(results);
+  console.log(results._embedded.attractions[0].url);
   if (results.length === 0) {
     displayConEl.textContent = "random stuff palceholder!";
     return;
   }
   for (var i = 0; i < results._embedded.attractions.length; i++) {
-    var displayEl = document.createElement("li")
+    var eventURL = results._embedded.attractions[i].url;
+    var displaylistEl = document.createElement("li")
     //create a link element to take users to the results from tm
-    displayEl.classList  = "list-item flex-row justify-space-between align-center";
-    displayEl.setAttribute("href",results._embedded.attractions[i].url);
-    displayEl.setAttribute("target", "_blank");
+    displaylistEl.classList  = "list-item flex-row justify-space-between align-center";
+    displaylistEl.setAttribute("target", "_blank");
+
   
     //create span to hold display title
-    var titleEl = document.createElement("span");
-    titleEl.textContent =results._embedded.attractions[i].name ;
-  
+    var listAnchorEl = document.createElement("a");
+    listAnchorEl.setAttribute("href",results._embedded.attractions[i].url);
+    var titleSpanEl = document.createElement("span");
+    titleSpanEl.textContent =results._embedded.attractions[i].name;
+    listAnchorEl.appendChild(titleSpanEl);
+
+    
     //append to container
-    displayEl.appendChild(titleEl);
+    displaylistEl.appendChild(listAnchorEl);
   
-    //create a type element
-    var typeEl = document.createElement("span");
-  
-    // append to container
-    displayEl.appendChild(typeEl);
+   
   
     // append to the dom 
-    displayConEl.appendChild(displayEl);
+    displayConEl.appendChild(displaylistEl);
   }
 }
 

@@ -96,7 +96,8 @@ header nav ul li a {
 }
 
 .comlumn {
-  
+    display: flex;
+    
 
 }
 
