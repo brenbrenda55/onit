@@ -148,5 +148,14 @@ var displayTMresults = function (results) {
 // for loop - looping over the weather forcast
 // appendChild - add the elements in the page
 
+<<<<<<< HEAD
 searchEl.addEventListener("click", formSubmitHandler);
+=======
+
+
+
+
+
+searchEl.addEventListener("click", formSubmitHandler)
+>>>>>>> bcc6b32e07d4df962affe76ce7a22b5cb5fd4dcf
 
