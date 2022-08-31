@@ -5,7 +5,7 @@ html {
 .title {
     color: #ffffff;
     text-align: center;
-    padding: 150px 0px;
+    padding:  150px 0;
     font-size: 100px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -189,6 +189,36 @@ header nav ul li a:hover {
 }
 
 
+
+@media screen and (max-width: 1700px) {
+    #search-bar {
+        position: relative;
+        left: 150px;
+        bottom: 50px;
+        width: 35%;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .search {
+        font-size: 15px;
+    }
+
+    .btn {
+        font-size: 15px;
+    }
+
+    #music-container {
+        position: relative;
+        bottom: 100px;
+        left: 175px;
+    }
+
+    #recent-container {
+        position: relative;
+        right: 50px;
+    }
+}
 @media screen and (max-width: 980px) {
     #search-bar {
         position: relative;

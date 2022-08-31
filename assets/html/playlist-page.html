@@ -35,7 +35,7 @@
 			Top Playlists
 		</div>
 		<div class="back-button"><a>Back to playlists</a></div>
-		<div id="playlist-container"></div>
+		<div class="" style="width: 1000px; height: 1px; position: relative; top: 100px; left: 200px;"id="playlist-container"></div>
 		<div id="tracks-container"></div>
 	</div>
 
@@ -47,14 +47,17 @@
 	</script>
 
 	<script id="tracks-template" type="text/x-handlebars-template">
+		<div class="colum">
 		{{#each tracks}}
+		
 		<div data-track-id="{{id}}" style="background-image:url(http://direct.rhapsody.com/imageserver/v2/albums/{{albumId}}/images/300x300.jpg)" class="cover">
-		<div class=content-name>{{name}}</div>
+		<div class="content-name">{{name}}</div>
 		<audio controls class= "audio">
 			<source src="{{previewURL}}" type="audio/mpeg">
 		</audio>
 		</div>
 		{{/each}}
+		</div>
 	</script>
 	
 	

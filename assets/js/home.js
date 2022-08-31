@@ -170,10 +170,20 @@ userFormEl.addEventListener("submit", formSubmitHandler);
 
 
 
+var getArtist = [];
 
 var saveRecentArtist = function(artistname){
-	var getArtist = [];
+	
 	localStorage.setItem("artist", JSON.stringify(artistname));
-	getArtist = JSON.parse(localStorage.getItem("artist"));
-	document.getElementById('ra').innerHTML = getArtist;
+	getArtistName();
+}
+
+var getArtistName = function(){
+	getArtist.push(JSON.parse(localStorage.getItem("artist")));
+	var allArtist = "";
+	for(i=0; i < getArtist.length; i++){
+		var currentArtist = getArtist[i];  
+		allArtist = allArtist + " / " + currentArtist;
+	}
+	document.getElementById('ra').innerHTML = allArtist;
 }
