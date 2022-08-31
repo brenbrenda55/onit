@@ -57,7 +57,7 @@ var getArtistID = function(artist) {
 	})
 };
 
-// Napster api fetch artist tracks, trackIDs, and use displayArtistTrack function 
+// Napster api fetch artist tracks, trackIDs, and use displayArtistTracks function 
 var getArtistTrackIDs = function(ArtistID) {
 	// console.log(ArtistID); 
 	var apiArtistTracksUrl = napsterAPI + "artists/" + ArtistID + "/tracks?apikey=" + APIKey;
@@ -68,29 +68,26 @@ var getArtistTrackIDs = function(ArtistID) {
 				response.json().then(function(data) {
 					// there is a lot of data available for each track
 
-					console.log(data.tracks);
-// 					console.log(data.tracks.previewURL);
-// 					console.log(data.tracks.name);
+					// console.log(data.tracks);
+					// console.log(data.tracks.previewURL);
+					// console.log(data.tracks.name);
 					// how many tracks are there?
 					for (i = 0; i < data.tracks.length; i++) {
-// 						console.log(data.tracks[i].id);
-// 						console.log(data.tracks[i].name);
+						// console.log(data.tracks[i].id);
+						// console.log(data.tracks[i].name);
 						var trackID = data.tracks[i].id;
 						var trackName = data.tracks[i].name;
 						var trackURL = data.tracks[i].href;
 						var albumID = data.tracks[i].albumId;
 						var previewURL = data.tracks[i].previewURL;
 						
-						console.log(albumID);
+						displayArtistTracks(trackID, trackName, trackURL);
 						
-						displayArtistTrack(trackID, trackName, trackURL);
 						trackURLStored.push(trackName, trackURL, albumID, previewURL);
 						saveTrackUrl();
-						console.log(previewURL);
 					};
 					for (i = 0; i < data.tracks.length; i++) {
-						console.log(data.tracks[i].href);
-
+						// console.log(data.tracks[i].href);
 					};
 					return;
 				})
@@ -99,12 +96,15 @@ var getArtistTrackIDs = function(ArtistID) {
 			}
 		}).catch(function(error) {
 			console.log("Unable to connect to napsterAPI");
-		});				
+	});				
 };
 
 var displayArtistName = function(artistReturnedName) {
 	// clear previous artist name
 	artistNameContainerEl.textContent = "";
+	// lets clear out trackContainerEl 
+	clearDisplayArtistTracks();
+	
 	// check if api returns an artistID
 	if(artistReturnedName.length === 0) {
 		artistNameContainerEl.textContent = "No artist found.";
@@ -126,13 +126,16 @@ var displayNoArtistError = function(artistSearchTerm) {
 	artistNameContainerEl.textContent = "No artist exists with the name: " + artistSearchTerm;
 }
 
-var displayArtistTrack = function(trackID, trackName, trackURL) {
+var clearDisplayArtistTracks = function() {
+	trackContainerEl.textContent = "";
+}
+
+var displayArtistTracks = function(trackID, trackName, trackURL) {
 	// check if api returns an artistTracksID
 	if(trackID.length === 0) {
-		console.log("No artist tracks found.");
+		trackContainerEl.textContent = "No tracks found.";
 		return;
 	};
-	
 	// create a container for each track
 	var trackEl = document.createElement("a");
 	trackEl.classList = "list-item flex-box justify-space-between align-center";
@@ -147,7 +150,6 @@ var displayArtistTrack = function(trackID, trackName, trackURL) {
 	
 	// append to container to the DOM
 	trackContainerEl.appendChild(trackEl);
-	
 }
 
 var saveTrackUrl = function() {
@@ -155,10 +157,6 @@ var saveTrackUrl = function() {
 };
 
 userFormEl.addEventListener("submit", formSubmitHandler);
-
-
-
-
 
 
 
