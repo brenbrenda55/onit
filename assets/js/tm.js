@@ -151,4 +151,3 @@ var displayTMresults = function (results) {
 
 searchEl.addEventListener("click", formSubmitHandler);
 
-
